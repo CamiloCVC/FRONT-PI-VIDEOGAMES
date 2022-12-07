@@ -3,7 +3,7 @@ import axios from "axios"
 
 export const getGames=()=>{
     return async function(dispach){
-        let games = await axios.get(`http://localhost:3001/videogames`);
+        let games = await axios.get(`backend-pi-videogames-production.up.railway.app/videogames`);
         return dispach({
         type: 'GET_GAMES',
         payload: games.data 
@@ -13,7 +13,7 @@ export const getGames=()=>{
 
 export const getGamesByName=(name)=>{
     return async function(dispach){
-        let gamesByName = await axios.get(`http://localhost:3001/videogames?name=${name}`)
+        let gamesByName = await axios.get(`backend-pi-videogames-production.up.railway.app/videogames?name=${name}`)
         return dispach({
             type: 'GET_GAMES_NAME',
             payload: gamesByName.data
@@ -23,7 +23,7 @@ export const getGamesByName=(name)=>{
 
 export const getGenres = ()=>{
     return async function(dispach){
-        let genres = await axios.get(`http://localhost:3001/genres`);
+        let genres = await axios.get(`backend-pi-videogames-production.up.railway.app/genres`);
         return dispach({
         type: 'GET_GENRES',
         payload: genres.data 
@@ -67,7 +67,7 @@ export const filterApiDb = (payload) => {
 
 export const getGameById = (id)=>{
     return async function(dispach){
-        let game = await axios.get(`http://localhost:3001/videogames/${id}`);
+        let game = await axios.get(`backend-pi-videogames-production.up.railway.app/videogames/${id}`);
         return dispach({
         type: 'GET_GAME_ID',
         payload: game.data 
@@ -83,7 +83,7 @@ export const postVideogame = (payload) => {
     return async (dispatch) => {
        try {
           console.log(payload)
-          const json = await axios.post('http://localhost:3001/videogames', payload)
+          const json = await axios.post('backend-pi-videogames-production.up.railway.app/videogames', payload)
           console.log(json.data)
           return dispatch({
              type: 'POST_VIDEOGAME',
