@@ -3,7 +3,7 @@ import axios from "axios"
 
 export const getGames=()=>{
     return async function(dispach){
-        let games = await axios.get(`backend-pi-videogames-production.up.railway.app/videogames`);
+        let games = await axios.get(`https://backend-pi-videogames-production.up.railway.app/videogames`);
         return dispach({
         type: 'GET_GAMES',
         payload: games.data 
