@@ -6,7 +6,7 @@ import bg from "./2.mp4";
 export default function LandingPage() {
   return (
     <div className="landingDiv">
-      <video autoPlay loop muted>
+      <video autoPlay loop muted  disablePictureInPicture>
         <source src={bg} type="video/mp4" />
       </video>
       <Link to="/home">
